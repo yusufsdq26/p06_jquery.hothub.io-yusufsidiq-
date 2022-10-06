@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu_spa.css">
+    <title>SPA Menu Yusuf</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+         var currentSection = 0;
+           $('#konten').hide();
+           $('#utama a').click(function() {       
+          
+            $('#hana a').removeClass('aktif');
+          $(this).addClass('aktif');
+    
+         var href = $(this).attr('href');
+           $('#konten>div').hide();
+           
+           $(href).show();
+                
+          if(currentSection == 0){
+              $('#konten').slideToggle();
+              currentSection = href;
+          }else if(currentSection == href){
+               $('#konten').slideToggle();
+               currentSection = 0;    
+          }else{
+              currentSection = href;
+          }
+          return false;
+      });
+    });
+      </script>
+</head>
+<body>
+    
+    <div class="menu">
+        <ul id="utama">
+            <div id="navbar" class="atas">
+                <a href="#home">Yusuf</a></div>
+            <div class="nav-menu">
+                <a href="#profile">MyProfile</a>  
+                <a href="#tugas" class="nav-menu">Tugas</a>   
+                <a href="#contact" class="nav-menu">Contact</a>
+            </div>
+        </ul>
+        <div class="kepala">
+        <br>
+       </div>
+            <div id="konten" style="display: none;">
+                <div id="home" class="isi">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere esse delectus quibusdam, nobis quia porro doloremque deleniti, nulla sint eaque beatae, consequatur voluptate temporibus hic eos? Sequi ab vel quisquam.
+                </div>
+                 <div id="profile" class="isi">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas animi aliquam cumque veniam nobis amet eius placeat eos. Tenetur obcaecati, fugit laboriosam quidem nam ad? Repudiandae expedita labore unde itaque.
+                </div>
+                <div id="tugas" class="isi">
+                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa consequatur dolorem molestiae tempore distinctio temporibus, officia ab odio similique iusto dignissimos aliquam voluptatem odit suscipit illo quasi, deleniti quisquam rem!
+                </div>             
+              <div id="contact" class="isi">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, nisi esse! Doloremque excepturi, totam aliquam sint deleniti provident, voluptates, numquam quaerat ut sequi autem iure non ipsam at distinctio? Deleniti.
+                </div>
+
+        </div>
+
+    </div>
+  
+
+</body>
+</html>
